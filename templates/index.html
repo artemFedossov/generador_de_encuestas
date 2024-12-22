@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de QR</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Generador de Código QR</h1>
+    <form action="/generate" method="post">
+        <label for="text">Texto para el QR:</label>
+        <input type="text" id="text" name="text" required>
+        <button type="submit">Generar QR</button>
+    </form>
+</body>
+</html>

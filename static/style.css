@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+form {
+    margin: 20px;
+}
+input, button {
+    margin-top: 10px;
+}
+img {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+}
