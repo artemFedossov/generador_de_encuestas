@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta {{ numero }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p>{{ nombre or 'Generador de Encuestas' }}</p>
+    
+    <h2>Pregunta {{ numero }}</h2>
+    <p>{{ pregunta }}</p>
+    
+    <form action="{{ url_for('siguiente', numero=numero) }}" method="POST">
+        <div class="opciones">
+            {% for opcion in opciones %}
+            <label>
+                <input type="radio" name="respuesta" value="{{ opcion }}">
+                {{ opcion }}
+            </label><br>
+            {% endfor %}
+        </div>
+        
+        <div class="boton-siguiente">
+            <button type="submit">Siguiente</button>
+        </div>
+    </form>
+</body>
+</html>
+

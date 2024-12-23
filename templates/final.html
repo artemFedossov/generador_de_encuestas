@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Finalizada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Gracias por realizar la encuesta</h1>
+    <p>{{ nombre or 'Generador de Encuestas' }}</p>
+    <p>¡Tus respuestas han sido enviadas con éxito!</p>
+</body>
+</html>

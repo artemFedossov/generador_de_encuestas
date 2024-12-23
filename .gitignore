@@ -1,0 +1,34 @@
+# Entorno virtual de Python
+venv/
+.env
+
+# Archivos de configuración o secretos
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Archivos de bases de datos locales
+instance/
+*.sqlite
+*.db
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de dependencias
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs
+.vscode/
+.idea/
+*.iml
