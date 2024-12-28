@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta {{ numero }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <p>{{ nombre or 'Generador de Encuestas' }}</p>
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>Bienvenido</h1>
+        <p>{{ nombre or 'Generador de Encuestas' }}</p>
+    </div>
     
-    <h2>Pregunta {{ numero }}</h2>
-    <p>{{ pregunta }}</p>
+    <!-- Contenedor de la Pregunta -->
+    <div class="pregunta">
+        <p>{{ pregunta }}</p>
+    </div>
     
+    <!-- Formulario de Opciones -->
     <form action="{{ url_for('siguiente', numero=numero) }}" method="POST">
         <div class="opciones">
             {% for opcion in opciones %}
-            <label>
-                <input type="radio" name="respuesta" value="{{ opcion }}">
-                {{ opcion }}
-            </label><br>
+            <div class="opcion">
+                <label>
+                    <input type="radio" name="respuesta" value="{{ opcion }}">
+                    {{ opcion }}
+                </label>
+            </div>
             {% endfor %}
         </div>
         
+        <!-- Botón Siguiente -->
         <div class="boton-siguiente">
             <button type="submit">Siguiente</button>
         </div>
     </form>
 </body>
 </html>
-
