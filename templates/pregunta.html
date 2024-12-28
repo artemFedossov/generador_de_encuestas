@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pregunta {{ numero }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <!-- Encabezado -->
@@ -19,7 +19,7 @@
     </div>
     
     <!-- Formulario de Opciones -->
-    <form action="{{ url_for('siguiente', numero=numero) }}" method="POST">
+    <form action="{{ url_for('siguiente', numero=numero) }}" method="POST" onsubmit="return validarSeleccion()">
         <div class="opciones">
             {% for opcion in opciones %}
             <div class="opcion">
@@ -36,5 +36,7 @@
             <button type="submit">Siguiente</button>
         </div>
     </form>
+
+    <script src="{{ url_for('static', filename='js/validacion.js') }}"></script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>QR Generado</h1>
+        <p>Escanea el código o usa el enlace para acceder a la encuesta.</p>
+    </div>
+
+    <div class="qr-container">
+        <img src="data:image/png;base64,{{ qr_code }}" alt="Código QR">
+        <p><a href="{{ url }}">{{ url }}</a></p>
+    </div>
+
+    <div class="boton-volver">
+        <a href="{{ url_for('index') }}">Volver al Inicio</a>
+    </div>
+</body>
+</html>

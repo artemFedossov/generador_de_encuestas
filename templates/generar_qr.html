@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Generador de QR</h1>
+        <p>Ingresa la información de tu encuesta y genera un código QR.</p>
+    </div>
+    
+    <form action="{{ url_for('procesar_qr') }}" method="POST">
+        <!-- Datos del Usuario -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+        
+        <!-- Contenedor de Preguntas -->
+        <div id="preguntas-container">
+            <div class="pregunta">
+                <label for="pregunta_1">Pregunta 1:</label>
+                <input type="text" id="pregunta_1" name="pregunta_1" required>
+                
+                <div class="opciones">
+                    <label>Opción 1:</label>
+                    <input type="text" name="pregunta_1_opcion_1" required>
+                    <label>Opción 2:</label>
+                    <input type="text" name="pregunta_1_opcion_2" required>
+                    <label>Opción 3:</label>
+                    <input type="text" name="pregunta_1_opcion_3" required>
+                    <label>Opción 4:</label>
+                    <input type="text" name="pregunta_1_opcion_4" required>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones -->
+        <div class="botones">
+            <button type="button" id="agregar-pregunta">Agregar Otra Pregunta</button>
+            <button type="submit">Generar QR</button>
+        </div>
+    </form>
+
+    <!-- Archivo JavaScript Externo -->
+    <script src="{{ url_for('static', filename='js/generar_qr.js') }}"></script>
+</body>
+</html>

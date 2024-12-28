@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuesta Finalizada</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Gracias por realizar la encuesta</h1>
-    <p>{{ nombre or 'Generador de Encuestas' }}</p>
-    <p>¡Tus respuestas han sido enviadas con éxito!</p>
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>Bienvenido</h1>
+        <p>{{ nombre or 'Generador de Encuestas' }}</p>
+    </div>
+    
+    <!-- Contenido Final -->
+    <div class="final">
+        <h2>¡Gracias por participar en la encuesta!</h2>
+        <p>Tus respuestas han sido enviadas con éxito. 🎉</p>
+        
+        <!-- Botón Volver al Inicio -->
+        <div class="boton-volver">
+            <a href="{{ url_for('index') }}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
